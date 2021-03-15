@@ -28,6 +28,8 @@ set noshowmode
 set clipboard=unnamed
 set clipboard=unnamedplus
 
+set completeopt=menuone,noinsert,noselect
+
 " Plugins
 call plug#begin()
 Plug 'christoomey/vim-tmux-navigator'
@@ -98,6 +100,9 @@ nnoremap <leader>u :UndotreeToggle<CR>
 let g:airline#extension#tabline#enabled = 1
 let g:airline#extensions#tmuxline#enabled = 0
 let g:airline_theme='gruvbox'
+
+let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+lua require'lspconfig'.tsserver.setup{ on_attach=require'completion'.on_attach }
 
 augroup fmt
     autocmd!
