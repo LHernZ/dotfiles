@@ -76,6 +76,8 @@ highlight netrwDir guifg=#5eacd3
 highlight qfFileName guifg=#aed75f
 hi TelescopeBorder guifg=#5eacd1
 
+set pastetoggle=<F3>
+
 " SMH
 if executable('rg')
     let g:rg_derive_root='true'
@@ -104,6 +106,15 @@ let g:airline_theme='gruvbox'
 let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 lua require'lspconfig'.tsserver.setup{ on_attach=require'completion'.on_attach }
 lua require'lspconfig'.pyls.setup{ on_attach=require'completion'.on_attach }
+
+" to fix cursor shape in WSL bash add 
+" echo -ne "\e[2 q"
+" to .bashrc
+if &term =~ "xterm"
+    let &t_SI = "\<Esc>[6 q"
+    let &t_SR = "\<Esc>[3 q"
+    let &t_EI = "\<Esc>[2 q"
+endif
 
 augroup fmt
     autocmd!
