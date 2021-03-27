@@ -34,4 +34,8 @@ M.search_dotfiles = function ()
     })
 end
 
+M.set_bg = function()
+    vim.fn.system("python3 ~/dotfiles/bg_changer.py")
+end
+
 return M
