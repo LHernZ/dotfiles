@@ -1,5 +1,6 @@
 import random, os
 import json
+import sys
 path = "bgs"
 
 random_filename = random.choice([
@@ -11,7 +12,7 @@ with open('settings.json', 'r') as f:
     data = json.load(f)
 
 t_path, f_name = str(data["profiles"]["defaults"]["backgroundImage"]).rsplit("\\",1)
-data["profiles"]["defaults"]["backgroundImage"] = t_path + "\\" + random_filename
+data["profiles"]["defaults"]["backgroundImage"] = t_path + "\\" + str(sys.argv[1])[2:]
 
 with open('settings.json', 'w') as f:
     json.dump(data, f)
