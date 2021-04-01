@@ -20,11 +20,18 @@ require('telescope').setup {
         fzy_native = {
             override_generic_sorter = false,
             override_file_sorter = true,
+        },
+        media_files = {
+          -- filetypes whitelist
+          -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+          filetypes = {"png", "webp", "jpg", "jpeg"},
+          find_cmd = "rg" -- find command (defaults to `fd`)
         }
     }
 }
 
 require('telescope').load_extension('fzy_native')
+require('telescope').load_extension('media_files')
 
 local M = {}
 M.search_dotfiles = function ()
@@ -35,7 +42,8 @@ M.search_dotfiles = function ()
 end
 
 function set_background(content)
-    print(vim.fn.system("python3 ~/dotfiles/bg_changer.py " .. content))
+    --print(vim.fn.system("python3 ~/dotfiles/bg_changer.py " .. content))
+    print('Hey')
 end
 
 local function select_background(prompt_bufnr, map)
@@ -59,8 +67,9 @@ end
 
 local function image_selector(prompt, cwd)
     return function()
-        require('telescope.builtin').find_files({
+        require('telescope').extensions.media_files.media_files({
             prompt_title = prompt,
+            print(prompt_title),
             cwd = cwd,
 
             attach_mappings = function(prompt_bufnr, map)
@@ -71,6 +80,6 @@ local function image_selector(prompt, cwd)
     end
 end
 
-M.set_bg = image_selector("< Webs > ", "~/dotfiles/bgs")
+M.set_bg = image_selector("< Webs > ", "~/dotfiles/backgrounds")
 
 return M

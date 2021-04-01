@@ -15,6 +15,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'nvim-telescope/telescope-media-files.nvim'
 
 " Neovim Tree shitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -35,6 +36,10 @@ Plug 'vuciv/vim-bujo'
 
 Plug 'ThePrimeagen/vim-be-good'
 
+Plug 'onsails/lspkind-nvim'
+
+" tree
+Plug 'kyazdani42/nvim-web-devicons'
 call plug#end()
 
 lua require("apex")

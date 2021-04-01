@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 mkdir -p ~/.config/nvim/plugin
 mkdir -p ~/.config/nvim/after/plugin
-mkdir -P ~/.config/nvim/lua
+mkdir -p ~/.config/nvim/lua
 
 # link
 for f in `find . -regex ".*\.vim$\|.*\.lua$"`; do

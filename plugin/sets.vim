@@ -28,3 +28,4 @@ set noshowmode
 set clipboard=unnamed
 set clipboard=unnamedplus
 
+set guifont=CaskaydiaCove\ Nerd\ Font\ 12
