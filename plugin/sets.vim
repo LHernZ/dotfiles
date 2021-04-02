@@ -29,3 +29,4 @@ set clipboard=unnamed
 set clipboard=unnamedplus
 
 set guifont=CaskaydiaCove\ Nerd\ Font\ 12
+set termguicolors

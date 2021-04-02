@@ -10,3 +10,4 @@ nnoremap <leader>vh :lua require('telescope.builtin').help_tags()<CR>
 
 nnoremap <leader>vrc :lua require('apex.telescope').search_dotfiles()<CR>
 nnoremap <leader>bg :lua require('apex.telescope').set_bg()<CR>
+nnoremap <leader>te :lua require('telescope').extensions.nvim_image_previewer.nvim_image_previewer()<CR>

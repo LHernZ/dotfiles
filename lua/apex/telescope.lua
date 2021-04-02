@@ -26,12 +26,15 @@ require('telescope').setup {
           -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
           filetypes = {"png", "webp", "jpg", "jpeg"},
           find_cmd = "rg" -- find command (defaults to `fd`)
+        },
+        nvim_image_previewer = {
         }
     }
 }
 
 require('telescope').load_extension('fzy_native')
 require('telescope').load_extension('media_files')
+require('telescope').load_extension('nvim_image_previewer')
 
 local M = {}
 M.search_dotfiles = function ()
@@ -67,9 +70,8 @@ end
 
 local function image_selector(prompt, cwd)
     return function()
-        require('telescope').extensions.media_files.media_files({
+        require('telescope').extensions.nvim_image_previewer.nvim_image_previewer({
             prompt_title = prompt,
-            print(prompt_title),
             cwd = cwd,
 
             attach_mappings = function(prompt_bufnr, map)
@@ -80,6 +82,6 @@ local function image_selector(prompt, cwd)
     end
 end
 
-M.set_bg = image_selector("< Webs > ", "~/dotfiles/backgrounds")
+M.set_bg = image_selector("< Webs > ", "~/dotfiles/Terminal")
 
 return M

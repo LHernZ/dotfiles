@@ -40,6 +40,9 @@ Plug 'onsails/lspkind-nvim'
 
 " tree
 Plug 'kyazdani42/nvim-web-devicons'
+
+" WIP
+Plug '~/dotfiles/nvim-image-previewer/'
 call plug#end()
 
 lua require("apex")
