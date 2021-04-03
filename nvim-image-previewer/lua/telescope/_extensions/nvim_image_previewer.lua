@@ -61,7 +61,7 @@ function M.image_files(opts)
                 local filename = entry[1]
                 local cmd = "call setreg(v:register,'"..filename.."')";
                 vim.cmd(cmd)
-                print("The image path has been copied!")
+                return filename
             end
         end)
         return true
@@ -80,7 +80,7 @@ function M.image_files(opts)
             opts
         ),
         previewer = M.media_preview.new(opts),
-        sorter = conf.file_sorter(opts),
+        sorter = conf.file_sorter(opts)
     })
 
     local line_count = vim.o.lines - vim.o.cmdheight

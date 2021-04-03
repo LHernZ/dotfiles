@@ -41,6 +41,12 @@ Plug 'onsails/lspkind-nvim'
 " tree
 Plug 'kyazdani42/nvim-web-devicons'
 
+Plug 'mattn/emmet-vim'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
+
 " WIP
 Plug '~/dotfiles/nvim-image-previewer/'
 call plug#end()
@@ -70,6 +76,8 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 nnoremap <leader>u :UndotreeShow<CR>
 
+nmap <leader>py <Plug>(prettier)
+
 vnoremap <leader>p "_dP
 
 nnoremap <leader>y "+y
@@ -83,6 +91,10 @@ vnoremap <leader>d "_d
 let g:airline#extension#tabline#enabled = 1
 let g:airline#extensions#tmuxline#enabled = 0
 let g:airline_theme='gruvbox'
+
+let g:user_emmet_leader_key='<C-Z>'
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
 
 " vim TODO
 nmap <Leader>tu <Plug>BujoCheckNormal
