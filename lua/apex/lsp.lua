@@ -3,6 +3,7 @@ local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
 
 local on_attach = require'completion'.on_attach
 require'lspconfig'.tsserver.setup{ on_attach = on_attach }
+require'lspconfig'.gopls.setup{ on_attach = on_attach }
 
 require'lspconfig'.pyls.setup{ on_attach = on_attach }
 

@@ -34,6 +34,8 @@ Plug 'junegunn/gv.vim'
 Plug 'vim-utils/vim-man'
 Plug 'vuciv/vim-bujo'
 
+Plug 'voldikss/vim-floaterm'
+
 Plug 'ThePrimeagen/vim-be-good'
 
 Plug 'onsails/lspkind-nvim'
@@ -96,6 +98,7 @@ let g:user_emmet_leader_key='<C-Z>'
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 
+nnoremap <leader>tn :FloatermNew ranger --cmd="cd ~"<CR>
 " vim TODO
 nmap <Leader>tu <Plug>BujoCheckNormal
 nmap <Leader>th <Plug>BujoAddnormal
