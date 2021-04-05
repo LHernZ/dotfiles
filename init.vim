@@ -49,6 +49,8 @@ Plug 'prettier/vim-prettier', {
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
 
+Plug 'ayu-theme/ayu-vim'
+
 " WIP
 Plug '~/dotfiles/nvim-image-previewer/'
 call plug#end()
@@ -98,7 +100,9 @@ let g:user_emmet_leader_key='<C-Z>'
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 
-nnoremap <leader>tn :FloatermNew ranger --cmd="cd ~"<CR>
+let cpwd = getcwd()
+
+nnoremap <leader>tn :FloatermNew --height=0.6 --width=0.5 --name=FileManager nnn `cpwd` <CR>
 " vim TODO
 nmap <Leader>tu <Plug>BujoCheckNormal
 nmap <Leader>th <Plug>BujoAddnormal
@@ -113,6 +117,7 @@ if &term =~ "xterm"
     let &t_EI = "\<Esc>[2 q"
 endif
 
+autocmd VimEnter * FloatermNew! --silent
 augroup fmt
     autocmd!
     autocmd BufWritePre * undojoin | Neoformat
