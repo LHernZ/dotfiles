@@ -28,6 +28,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 
+Plug 'glepnir/galaxyline.nvim', {'branch': 'main'}
+
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 
@@ -42,6 +44,8 @@ Plug 'onsails/lspkind-nvim'
 
 " tree
 Plug 'kyazdani42/nvim-web-devicons'
+
+Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'}
 
 Plug 'mattn/emmet-vim'
 Plug 'prettier/vim-prettier', {
@@ -92,9 +96,9 @@ nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 
 
-let g:airline#extension#tabline#enabled = 1
-let g:airline#extensions#tmuxline#enabled = 0
-let g:airline_theme='gruvbox'
+"let g:airline#extension#tabline#enabled = 1
+"let g:airline#extensions#tmuxline#enabled = 0
+"let g:airline_theme='gruvbox'
 
 let g:user_emmet_leader_key='<C-Z>'
 let g:prettier#autoformat = 1
@@ -107,6 +111,9 @@ nnoremap <leader>tn :FloatermNew --height=0.6 --width=0.5 --name=FileManager nnn
 nmap <Leader>tu <Plug>BujoCheckNormal
 nmap <Leader>th <Plug>BujoAddnormal
 let g:bujo#todo_file_path = $HOME . "/.cache/bujo"
+
+" Blankline
+let g:indentLine_enabled = 1
 
 " to fix cursor shape in WSL bash add 
 " echo -ne "\e[2 q"
