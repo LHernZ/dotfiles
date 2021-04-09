@@ -48,9 +48,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'lukas-reineke/indent-blankline.nvim', {'branch': 'lua'}
 
 Plug 'mattn/emmet-vim'
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'prettier/vim-prettier', {'do': 'yarn install'}
 Plug 'iamcco/coc-tailwindcss',  {'do': 'yarn install --frozen-lockfile && yarn run build'}
 
 Plug 'ayu-theme/ayu-vim'
@@ -105,6 +103,8 @@ let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 
 let cpwd = getcwd()
+
+let g:prettier#autoformat = 1
 
 nnoremap <leader>tn :FloatermNew --height=0.6 --width=0.5 --name=FileManager nnn `cpwd` <CR>
 " vim TODO

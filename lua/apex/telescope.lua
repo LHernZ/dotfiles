@@ -81,7 +81,7 @@ function M.custom(opts)
             set_the_background(true)
         end)
     end
-    local filetypes = {"png", "jpg"}
+    local filetypes = {"png", "jpg", "jpeg"}
     local find_command = {
         rg = {
             'rg',
